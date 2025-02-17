@@ -9,8 +9,8 @@ async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
     if (!response.ok) {
-        document.querySelector(".error").style.display = "block"; // Show error message
-        document.querySelector(".weather").style.display = "none"; // Hide weather data
+        document.querySelector(".error").style.display = "block"; 
+        document.querySelector(".weather").style.display = "none"; 
         return;
     }
 
@@ -34,11 +34,12 @@ async function checkWeather(city) {
         weatherIcon.src = "mist.png";
     }
 
-    document.querySelector(".weather").style.display = "block"; // Show weather data
-    document.querySelector(".error").style.display = "none";   // Hide error message
+
+    document.querySelector(".weather").style.display = "block"; 
+    document.querySelector(".error").style.display = "none";   
 }
 
-// Event listener for search button
+
 searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value);
 });
